@@ -7,8 +7,6 @@ from distutils.core import setup
 
 import tagging
 
-
-
 def fullsplit(path, result=None):
     """
     Split a pathname into components (the opposite of os.path.join) in a
@@ -51,11 +49,13 @@ for dirpath, dirnames, filenames in os.walk(tagging_dir):
 
 
 setup(
-    name = 'django-tagging',
+    name = 'django-tagging-fork',
     version = tagging.get_version(),
     description = 'Generic tagging application for Django',
-    author = 'Jonathan Buchanan',
-    author_email = 'jonathan.buchanan@gmail.com',
+    author = 'Mikael Turøy',
+    author_email = 'terra@thelazy.net',
+    #author = 'Jonathan Buchanan',
+    #author_email = 'jonathan.buchanan@gmail.com',
     url = 'http://code.google.com/p/django-tagging/',
     packages = packages,
     data_files = data_files,

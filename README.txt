@@ -8,3 +8,9 @@ For installation instructions, see the file "INSTALL.txt" in this
 directory; for instructions on how to use this application, and on
 what it provides, see the file "overview.txt" in the "docs/"
 directory.
+
+====
+FORK
+====
+
+Forked due to no activity on code, plus nasty bugs still unfixed

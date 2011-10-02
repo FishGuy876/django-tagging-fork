@@ -203,6 +203,7 @@ class TagManager(models.Manager):
         WHERE %(tagged_item)s.content_type_id = %(content_type_id)s
           AND %(tagged_item)s.object_id IN
           (
+            SELECT object_id FROM (
               SELECT %(tagged_item)s.object_id
               FROM %(tagged_item)s, %(tag)s
               WHERE %(tagged_item)s.content_type_id = %(content_type_id)s
@@ -210,6 +211,7 @@ class TagManager(models.Manager):
                 AND %(tag)s.id IN (%(tag_id_placeholders)s)
               GROUP BY %(tagged_item)s.object_id
               HAVING COUNT(%(tagged_item)s.object_id) = %(tag_count)s
+            ) AS object_id
           )
           AND %(tag)s.id NOT IN (%(tag_id_placeholders)s)
         GROUP BY %(tag)s.id, %(tag)s.name
